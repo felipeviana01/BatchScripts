@@ -1,0 +1,20 @@
+::
+:: Script for creating a CSV list with the filed from a local folder, same path as script
+:: Use case, generating lists for internal mass mailing 
+::
+echo ###
+echo ###
+echo Generating a list of files inside this folder, It will be saved on the same folder.... Please wait
+echo ###
+echo ###
+echo %cd%
+timeout /T 10
+echo off
+echo %cd%\>> list.csv
+dir /aa-s-h /b /on | findstr /v /i "list.*$" >> list.csv
+echo ###
+echo ###
+echo ### "List generated at %cd%" ###
+echo ###
+echo ###
+pause
